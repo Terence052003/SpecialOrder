@@ -7,31 +7,46 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 </head>
-<body bg-gray-100>
-    <div class="flex h-screen">
-        <aside class="w-60 bg-gray-800 text-white p-5 fixed h-screen">
-            <h1 class="text-lg font-bold mb-5">Department of Education</h1>
-            <nav class="space-y-2">
-                <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Dashboard</a>
-                <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Student List</a>
-                <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Attachments</a>
-            </nav>
-        </aside>
-        <div class="flex-1 flex-col ml-60">
-            <header class="bg-white shadow p-4 flex justify-between items-center fixed w-[calc(100%-15rem)] z-10">
-                <h2 class="text-lg font-semibold">Special Order</h2>
-                <div class="flex items-center space-x-2">
-                    <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Sign In</button>
-                    <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Sign out</button>
-                    <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Logout</button>
+<body>
+    <div class="navbar bg-gray-200 flex justify-between">
+        <div class="flex items-center gap-2">
+            <div class="drawer z-[100]">
+                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content">
+                    <label for="my-drawer" class="btn btn-neutral drawer-button">☰</label>
                 </div>
-            </header>
+                <div class="drawer-side">
+                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <ul class="menu bg-base-200 text-base-content min-h-full w-70 p-4">
+                        <h1 class="text-red-500">Department of Education</h1>
+                        <li class="mt-5"><a>Strands</a></li>
+                        <li><a>Student List</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a class="btn btn-ghost text-xl">Department of Education</a>
+        </div>
 
-            <main class=" bg-gray-50 mt-16 h-full overflow-auto">
-                @yield('dashboard')
-            </main>
 
+        <div class="flex items-center gap-x-2">
+            <ul class="menu menu-horizontal px-1 gap-x-2">
+                <div class="form-control">
+                    <input type="text" placeholder="Search" class="input input-bordered h-10 w-24 md:w-auto" />
+                  </div>
+                <li>
+                    <details>
+                        <summary>Account</summary>
+                        <ul class="bg-base-100 rounded-t-none p-2">
+                            <li><a>Settings</a></li>
+                            <li><a>Logout</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
         </div>
     </div>
+    <main>
+    @yield('dashboard')
+    </main>
 </body>
 </html>

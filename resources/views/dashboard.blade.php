@@ -1,12 +1,44 @@
 @extends("components.app")
 @section("dashboard")
 
-<main class="bg-gray-50 flex-1">
+<main>
     @csrf
-    <div class="bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-xl font-bold">Special Order</h2>
-        <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum mollitia vel excepturi possimus atque? Sapiente, eaque obcaecati. Ut, eveniet culpa! Neque cumque amet voluptate, minus architecto assumenda sint hic tempore!</p>
-    </div>
+    <div class="overflow-x-auto">
+        <table class="table">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th>LRN</th>
+              <th>Name</th>
+              <th>Strand</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- row 1 -->
+            <tr>
+              <th>524531922517 </th>
+              <td>Cy Ganderton</td>
+              <td>ABM</td>
+              <td><div class="badge badge-error">Incomplete</div></td>
+            </tr>
+            <!-- row 2 -->
+            <tr>
+              <th>687530640030 </th>
+              <td>Hart Hagerty</td>
+              <td>TVL-ICT</td>
+              <td><div class="badge badge-success">complete</div></td>
+            </tr>
+            <!-- row 3 -->
+            <tr>
+              <th>291790878435 </th>
+              <td>Brice Swyre</td>
+              <td>STEM</td>
+              <td><div class="badge badge-success">complete</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 </main>
 
 @endsection

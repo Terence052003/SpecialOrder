@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div class="navbar bg-gray-200 flex justify-between">
+    <div class="navbar bg-blue-400 flex justify-between">
         <div class="flex items-center gap-2">
             <div class="drawer z-[100]">
                 <input id="my-drawer" type="checkbox" class="drawer-toggle" />
@@ -49,4 +49,5 @@
     @yield('dashboard')
     </main>
 </body>
+
 </html>
